@@ -2,40 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Để website hiển thị chuẩn trên mọi thiết bị -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Profile Card</title>
+
+    <!-- Link đến file CSS riêng -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Import Font Awesome để dùng icon (facebook, twitter, instagram, google) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
   </head>
   <body>
+    <!-- Khung chứa toàn bộ nội dung -->
     <div class="container">
+
+      <!-- Thẻ card hiển thị thông tin cá nhân -->
       <div class="card">
+
+        <!-- Phần ảnh đại diện -->
         <div class="img-card">
           <img src="img-1.jpg" alt="Profile" />
+
+          <!-- Menu icon mạng xã hội (ẩn, khi hover card sẽ hiện ra) -->
           <ul class="menu">
             <li>
-              <a href="#" class="menuitem"
-                ><i class="fa-brands fa-facebook-f"></i
-              ></a>
-              <a href="#" class="menuitem"
-                ><i class="fa-brands fa-twitter"></i
-              ></a>
-              <a href="#" class="menuitem"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a href="#" class="menuitem"
-                ><i class="fa-brands fa-google"></i
-              ></a>
+              <!-- Icon facebook -->
+              <a href="#" class="menuitem">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <!-- Icon twitter -->
+              <a href="#" class="menuitem">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+
+              <!-- Icon instagram -->
+              <a href="#" class="menuitem">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+
+              <!-- Icon google -->
+              <a href="#" class="menuitem">
+                <i class="fa-brands fa-google"></i>
+              </a>
             </li>
           </ul>
         </div>
+
+        <!-- Tên người -->
         <h3>Naidan Smith</h3>
+
+        <!-- Nghề nghiệp / chức danh -->
         <p>STOCK MARKET</p>
       </div>
     </div>
