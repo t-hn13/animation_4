@@ -1,86 +1,94 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  list-style-type: none;
+  margin: 0; /* Xóa khoảng cách mặc định của tất cả thẻ */
+  padding: 0; /* Xóa khoảng đệm mặc định của tất cả thẻ */
+  box-sizing: border-box; /* Tính cả padding + border vào kích thước width/height */
+  font-family: Arial, sans-serif; /* Font chữ mặc định cho toàn bộ trang */
+  list-style-type: none; /* Xóa dấu chấm/dấu số mặc định của danh sách (ul, ol) */
 }
 
 body {
-  background-color: #0f1440;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: #0f1440; /* Màu nền xanh đậm */
+  display: flex; /* Dùng flexbox để căn giữa */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  height: 100vh; /* Chiều cao = 100% màn hình hiển thị */
 }
+
 .container {
-  width: 100%;
+  width: 100%; /* Container chiếm toàn bộ chiều ngang */
 }
+
 .card {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 26%;
-  height: 600px;
-  text-align: center;
-  padding-bottom: 20px;
-  transition: 0.3s;
-  margin: 0 auto;
+  background: #fff; /* Nền trắng */
+  border-radius: 10px; /* Bo tròn góc */
+  overflow: hidden; /* Ẩn phần thừa ra ngoài khung */
+  width: 26%; /* Chiều rộng thẻ card = 26% màn hình */
+  height: 600px; /* Chiều cao cố định */
+  text-align: center; /* Canh giữa chữ và nội dung */
+  padding-bottom: 20px; /* Thêm khoảng trống phía dưới */
+  transition: 0.3s; /* Hiệu ứng mượt khi hover */
+  margin: 0 auto; /* Căn giữa card trong container */
 }
 
 .card img {
-  width: 100%;
-  height: 500px;
-  display: block;
-  object-fit: cover;
+  width: 100%; /* Ảnh chiếm toàn bộ chiều ngang của card */
+  height: 500px; /* Chiều cao cố định ảnh */
+  display: block; /* Hiển thị dạng block (không bị inline space) */
+  object-fit: cover; /* Ảnh được cắt/zoom để lấp đầy khung mà không méo */
 }
+
 .img-card {
-  position: relative;
-  overflow: hidden;
+  position: relative; /* Cho phép các phần tử con (menu) định vị tuyệt đối dựa trên nó */
+  overflow: hidden; /* Ẩn các phần tử con bị tràn ra ngoài */
 }
+
 .card h3 {
-  font-size: 30px;
-  margin: 15px 0 5px 0;
-  color: #222;
+  font-size: 30px; /* Kích thước chữ tên */
+  margin: 15px 0 5px 0; /* Trên: 15px, Dưới: 5px, Trái & Phải: 0 */
+  color: #222; /* Màu chữ xám đậm */
 }
 
 .card p {
-  font-size: 18px;
-  font-weight: 500;
-  color: #c82333; /* đỏ nhạt như STOCK MARKET */
-  letter-spacing: 1px;
+  font-size: 18px; /* Kích thước chữ nghề nghiệp */
+  font-weight: 500; /* Độ dày trung bình */
+  color: #c82333; /* Màu đỏ (giống STOCK MARKET trong ảnh mẫu) */
+  letter-spacing: 1px; /* Khoảng cách giữa các ký tự */
 }
-.menu {
-  position: absolute;
-  bottom: 20px;
-  transition: 0.6s ease;
-  left: calc(50% - 26% - 9%);
-  background-color: #0f1440;
-  transform: translateY(200px);
-}
-.menuitem {
-  display: inline-block;
-  padding: 30px;
-  color: #fff;
-  font-size: 20px;
-  z-index: 1;
-  position: relative;
-}
-.menuitem::after {
-  width: 100%;
 
-  height: 0;
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  background-color: #fd0000;
-  z-index: -1;
-  transition: 0.5s ease-in-out;
+.menu {
+  position: absolute; /* Menu được định vị tuyệt đối trong .img-card */
+  bottom: 20px; /* Cách đáy ảnh 20px */
+  transition: 0.6s ease; /* Thêm hiệu ứng trượt mượt */
+  left: calc(50% - 26% - 9%); /* Căn chỉnh menu vào giữa (tùy chỉnh bằng toán học) */
+  background-color: #0f1440; /* Nền xanh đậm */
+  transform: translateY(200px); /* Ban đầu menu nằm ngoài khung (ẩn xuống dưới 200px) */
 }
+
+.menuitem {
+  display: inline-block; /* Hiển thị theo hàng ngang */
+  padding: 30px; /* Khoảng cách bên trong icon */
+  color: #fff; /* Màu icon trắng */
+  font-size: 20px; /* Kích thước icon */
+  z-index: 1; /* Đảm bảo icon nằm trên lớp nền */
+  position: relative; /* Cho phép ::after định vị dựa trên nó */
+}
+
+.menuitem::after {
+  width: 100%; /* Chiều ngang phủ hết menuitem */
+  height: 0; /* Ban đầu chiều cao = 0 (ẩn nền) */
+  position: absolute; /* Định vị tuyệt đối trong menuitem */
+  content: ""; /* Bắt buộc để tạo pseudo-element */
+  bottom: 0; /* Bắt đầu từ đáy */
+  left: 0; /* Bắt đầu từ trái */
+  background-color: #fd0000; /* Màu nền khi hover (đỏ tươi) */
+  z-index: -1; /* Nằm dưới icon */
+  transition: 0.5s ease-in-out; /* Hiệu ứng mượt khi nền xuất hiện */
+}
+
 .menuitem:hover::after {
-  height: 100%;
+  height: 100%; /* Khi hover thì nền đỏ phủ toàn bộ menuitem */
 }
+
 .card:hover .menu {
-  transform: translateY(0);
+  transform: translateY(0); /* Khi hover vào card, menu trượt lên hiển thị */
 }
